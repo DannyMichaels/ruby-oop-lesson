@@ -327,7 +327,7 @@ class Programmer < Person
     super(name, age)
     @github = options[:github]
     @website = options[:website]
-    @language = options[:languages]
+    @languages = options[:languages]
   end
 end
 ```
