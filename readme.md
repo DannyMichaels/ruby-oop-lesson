@@ -444,14 +444,14 @@ programmer.about # => NoMethodError: undefined method `about' for Person
 
 ## Lab
 
-Another [shapes lab!](https://git.generalassemb.ly/wdi-nyc-delorean/LAB_U04_D02_Ruby-Classes)
+Another [shapes lab!](https://git.generalassemb.ly/wdi-nyc-hamilton/LAB_U04_D02_Ruby-Classes)
 
 ## Resources
 
 * [`Class` tutorial](http://ruby-for-beginners.rubymonstas.org/writing_classes/definition.html)
   - Almost everything in here is good. Click around to learn more than just classes!
 * [Ruby in 20 Minutes](https://www.ruby-lang.org/en/documentation/quickstart/2/)
-* [Previous Lecture](https://git.generalassemb.ly/wdi-nyc-delorean/LECTURE_U04_D01_Ruby_101)
+* [Previous Lecture](https://git.generalassemb.ly/wdi-nyc-hamilton/LECTURE_U04_D01_Ruby_101)
 
 
 ## Conclusion
