@@ -20,7 +20,7 @@ competencies: Programming
 ### Preparation
 *Before this lesson, students should:*
 - Be comfortable with the very basics of ruby
-- Understand the basic concepts of inheritance (JS class lecture)
+- Understand the basic concepts of OOP and inheritance (JS class lecture)
 
 
 ## OOP
@@ -63,7 +63,7 @@ arr.length # => 3
 arr.map { |name| name.upcase }
 ```
 
-> Check out all the `Array` by calling `Array.instance_methods` (or looking at the docs).  Also check out `Enumerable.instance_methods`
+> Check out all the `Array` methods by calling `Array.instance_methods` or `[].methods` (or looking at the docs).  Also check out `Enumerable.instance_methods`
 
 ## Defining a Class
 
@@ -201,7 +201,7 @@ class Person
 # ...
 ```
 
-And if we also wanted a writer for `age`:
+And if we also wanted a writer for `age`
 
 ```ruby
 class Person
@@ -263,7 +263,9 @@ So, avoid using ivars directly.  Use our friends `attr_reader`, `attr_writer`, a
 
 ## `private` methods
 
-`private` methods can only be called from within the class.  We can think of them as helper methods or methods for implementation.
+Every method by default is `public`. This means we can call it from in our outside our class.
+
+`private` methods can only be called from inside the class.  They are usually helper methods or methods for implementation.
 
 ```ruby
 class Person
