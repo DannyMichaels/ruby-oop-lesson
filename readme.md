@@ -334,7 +334,6 @@ class Programmer < Person
 end
 ```
 
-Look familiar?
 
 ### Adding new methods
 
@@ -446,7 +445,7 @@ programmer.about # => NoMethodError: undefined method `about' for Person
 
 ## Lab
 
-Another [shapes lab!](https://git.generalassemb.ly/wdi-nyc-lambda/LAB_U04_D02_Ruby-Classes)
+[Happy birthday everyone!](https://git.generalassemb.ly/wdi-nyc-lambda/LAB_U04_D02_Ruby-Classes)
 
 ## Resources
 
