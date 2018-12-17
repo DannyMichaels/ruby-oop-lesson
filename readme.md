@@ -445,7 +445,7 @@ programmer.about # => NoMethodError: undefined method `about' for Person
 
 ## Lab
 
-[Happy birthday everyone!](https://git.generalassemb.ly/wdi-nyc-lambda/LAB_U04_D02_Ruby-Classes)
+[Happy birthday everyone!](https://git.generalassemb.ly/wdi-nyc-octonion/Ruby_OOP_Lab)
 
 ## Resources
 
