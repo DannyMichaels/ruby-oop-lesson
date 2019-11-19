@@ -1,13 +1,3 @@
----
-title: Ruby OOP
-type: lesson
-duration: "2:30"
-creator:
-    name: Ari Brenner
-    city: NY
-competencies: Programming
----
-
 # Ruby OOP
 
 ### Objectives
@@ -115,17 +105,6 @@ end
 stacey.name # => "Stacey"
 ```
 
-This also means we can just use `name` in our `say_hi` method
-
-```ruby
-# ...
-  def say_hi
-    puts "Hi, name is #{name} and I am #{@age} years old!"
-  end
-# ...
-```
-
-
 If we also want `age` to be accessible:
 
 ```ruby
@@ -137,8 +116,6 @@ class Person
   end
 end
 ```
-
-Now we can call `stacey.age` (and also replace `@age` with `age` in `say_hi`).
 
 Because this pattern is so common there is a very nice method, `attr_reader`, which we can use as a short-hand.
 
@@ -217,16 +194,11 @@ class Person
 
   def have_birthday
     puts 'happy birthday'
-    self.age = age + 1
+    @age = age + 1
   end
 ```
 
-`self` is _similar_ to JS's `this`.  If we just did `age = age + 1` that would be setting a local variable.  We need to actually call our `age=` method to change the instance variable.
-
-We do _not_ need the `self.` when reading.  There is an implicit `self.` here.
-
-> Exception to that rule: if we want to reference the class from inside an instance method we need `self.class` because class is a reserved word. (We cannot just write `class`)
-
+If we just did `age = age + 1` that would be setting a local variable.  We need to actually call our `age=` method to change the instance variable.
 
 ### `attr_accessor`
 
@@ -252,15 +224,6 @@ class Person
 That one line creates 4 instance methods: `name`, `name=`, `age`, and `age=`.
 
 
-### Why all these methods?
-
-Why don't we just use the ivars everywhere instead of readers and writers? (eg. `@foo` to read and `@foo = bar` to write)
-
-This is very error prone as instance variables always yield `nil` if they are not defined. You do NOT get an error.  This means if we mistype ivars anywhere we will get unexpected bugs that are hard to track down.
-
-So, avoid using ivars directly.  Use our friends `attr_reader`, `attr_writer`, and `attr_accessor`.
-
-
 ## `private` methods
 
 Every method by default is `public`. This means we can call it from in our outside our class.
@@ -281,7 +244,7 @@ class Person
   private
 
   def increment_age
-    self.age = age + 1
+    @age = age + 1
   end
 ```
 
@@ -293,8 +256,6 @@ person.increment_age
 ```
 
 This error is a good thing!  Our `increment_age` method is just used for implementation.  We do not want it to be called outside of the class.
-
-
 
 ## Inheritance
 
@@ -372,12 +333,12 @@ We can add any new methods
 ```ruby
 # ...
 def build_resume
-  "#{name}, github: #{github}, website: #{website}, languages: #{languages.join(', ')}"
+  "#{@name}, github: #{@github}, website: #{@website}, languages: #{@languages.join(', ')}"
 end
 # ...
 ```
 
-`Programmer` now has a method `Programmer#build_resume`. (And we are not creating a `Person#build_resume`)
+`Programmer` now has a method `Programmer.build_resume`. (And we are not creating a `Person.build_resume`)
 
 
 ### Overriding methods
@@ -393,7 +354,7 @@ Of course we can also override methods
 # ...
 ```
 
-We are using `super` to call `Person#say_hi`.  Notice we do not need parens if the superclass's method takes no args!
+We are using `super` to call `Person.say_hi`.  Notice we do not need parens if the superclass's method takes no args!
 
 ### More `private` methods
 
@@ -411,9 +372,9 @@ class Programmer < Person
   private
 
   def setup(options)
-    self.github = options[:github]
-    self.website = options[:website]
-    self.language = options[:languages]
+    @github = options[:github]
+    @website = options[:website]
+    @language = options[:languages]
   end
 
   # ... other private methods
@@ -434,6 +395,8 @@ class Person
   # ...
 ```
 
+`self` works very similarly to `this` in javascript. It refers directly to its parent Class.
+
 We call these methods the way you would expect
 
 ```ruby
@@ -445,15 +408,13 @@ programmer.about # => NoMethodError: undefined method `about' for Person
 
 ## Lab
 
-[Happy birthday everyone!](https://git.generalassemb.ly/sei-nyc-pandas/Ruby_OOP_Lab)
+[Happy birthday everyone!](https://git.generalassemb.ly/sei-nyc-dinosaurs/Ruby_OOP_Lab)
 
 ## Resources
 
 * [`Class` tutorial](http://ruby-for-beginners.rubymonstas.org/writing_classes/definition.html)
   - Almost everything in here is good. Click around to learn more than just classes!
 * [Ruby in 20 Minutes](https://www.ruby-lang.org/en/documentation/quickstart/2/)
-* [Previous Lecture](https://git.generalassemb.ly/wdi-nyc-lambda/ruby-101-lesson)
-
 
 ## Conclusion
 - How are Ruby classes different from Javascript "classes"
