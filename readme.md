@@ -194,7 +194,7 @@ class Person
 
   def have_birthday
     puts 'happy birthday'
-    @age = age + 1
+    @age = @age + 1
   end
 ```
 
