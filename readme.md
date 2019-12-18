@@ -406,10 +406,6 @@ person.about # => NoMethodError: undefined method `about' for Person
 programmer.about # => NoMethodError: undefined method `about' for Person
 ```
 
-## Lab
-
-[Happy birthday everyone!](https://git.generalassemb.ly/sei-nyc-dinosaurs/Ruby_OOP_Lab)
-
 ## Resources
 
 * [`Class` tutorial](http://ruby-for-beginners.rubymonstas.org/writing_classes/definition.html)
